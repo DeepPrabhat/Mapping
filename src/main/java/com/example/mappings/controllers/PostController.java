@@ -1,5 +1,6 @@
 package com.example.mappings.controllers;
 
+import com.example.mappings.dto.CartDto;
 import com.example.mappings.models.Cart;
 import com.example.mappings.models.Items;
 import com.example.mappings.services.CartService;
@@ -28,6 +29,12 @@ public class PostController {
     public Cart addCart(@RequestBody Cart cart)
     {
         return cartService.addCart(cart);
+    }
+
+    @PostMapping("/addcartDto")
+    public Cart addCart(@RequestBody CartDto cartDto)
+    {
+        return cartService.addCartUsingDto(cartDto);
     }
 
     @PostMapping("/additem")
